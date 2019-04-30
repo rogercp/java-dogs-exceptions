@@ -23,6 +23,10 @@ Add appropriate exception handling routines. Required exceptions to handle are w
   * the wrong data type is used for a path variable
   * a non-handled endpoint is accessed (a URL not found exception)
 
+-----------------------------------------------------------------------------------
+
+The following is being removed from MVP due to lack of coverage during class!
+
 Add appropriate logging routines. Required logging include
   * Activating actuator endpoints
   * Tomcat logging routed to a separate log file
