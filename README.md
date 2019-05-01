@@ -11,6 +11,8 @@ We worked with dogs in plain Java. This project returns dog data using Rest APIs
 
 # Instructions
 
+## Day One
+
 The provided application exposes the following endpoints
 * /dogs -> returns a list of all dogs
 * /dogs/{id} -> returns a single dog based off of its id number
@@ -23,9 +25,9 @@ Add appropriate exception handling routines. Required exceptions to handle are w
   * the wrong data type is used for a path variable
   * a non-handled endpoint is accessed (a URL not found exception)
 
------------------------------------------------------------------------------------
+## Day two
 
-The following is being removed from MVP due to lack of coverage during class!
+Starting with either the dogs-initial application or your dogs from yesterday
 
 Add appropriate logging routines. Required logging include
   * Activating actuator endpoints
@@ -34,9 +36,23 @@ Add appropriate logging routines. Required logging include
     * should only go to console
     * for example when a clients calls /dogs log should say "/dogs accessed"
 
+Create RabbitMQ messaging system with three queues
+  * for each queue below, add a data and time stamp and a message what was done with any appropriate parameters. For instance include the data when creating a Dog, include the parameters when search for a dog...
+  * One for each time the /dogs endpoints are accessed
+  * One for each time the /calc endpoints are accessed
+  * One for each dog that is created
+  
+Create a separate application that reads messages from the queue recording each time the /dogs endpoints are accessed
+
+Stretch Goal
+  * Add a date and time stamp to your custom logging
+  * Create an application that reads messages from each queue and writes the message it a file for that queue. So all messages about creating dogs would be logged to a file about creating dogs; all messages about accessing /dogs would be logged to a file about accessing dogs,...
+
+-----------------------------------------------------------------------------------
+
+The following is being removed from MVP due to lack of coverage during class!
+
  Add server side rendering using Thymeleaf to 
   * display all dogs ordered by breed
   * display all dogs suitable for apartments ordered by breed
 
- Stretch Goal
-  * Add a date and time stamp to your custom logging
