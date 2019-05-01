@@ -39,7 +39,7 @@ Add appropriate logging routines. Required logging include
 Create RabbitMQ messaging system with three queues
   * for each queue below, add a data and time stamp and a message what was done with any appropriate parameters. For instance include the data when creating a Dog, include the parameters when search for a dog...
   * One for each time the /dogs endpoints are accessed
-  * One for each time the /calc endpoints are accessed
+  * One for each time the /dogs/breeds/{breed} endpoint is accessed
   * One for each dog that is created
   
 Create a separate application that reads messages from each queue, making sure to add to the message which queue it is from before displaying to the screen.
