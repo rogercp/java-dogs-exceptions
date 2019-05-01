@@ -35,6 +35,7 @@ Add appropriate logging routines. Required logging include
   * Custom logging under each Get endpoint saying the endpoint has been accessed
     * should only go to console
     * for example when a clients calls /dogs log should say "/dogs accessed"
+  * Note: put the log files under the directory /var/logs/lambdajx Feel free to create and necessary subdirectories.
 
 Create RabbitMQ messaging system with three queues
   * for each queue below, add a data and time stamp and a message what was done with any appropriate parameters. For instance include the data when creating a Dog, include the parameters when search for a dog...
