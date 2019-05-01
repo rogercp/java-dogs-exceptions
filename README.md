@@ -42,7 +42,7 @@ Create RabbitMQ messaging system with three queues
   * One for each time the /calc endpoints are accessed
   * One for each dog that is created
   
-Create a separate application that reads messages from the queue recording each time the /dogs endpoints are accessed
+Create a separate application that reads messages from each queue, making sure to add to the message which queue it is from before displaying to the screen.
 
 Stretch Goal
   * Add a date and time stamp to your custom logging
