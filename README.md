@@ -1,12 +1,12 @@
 # Project Restful Dogs
 
 A student that completes this project shows that they can:
-* implement server sided routing and rendering for a Spring REST service
+* implement basic front end Java for a Spring REST service
 * implement industry standard exception handling including user friendly exception messages
 
 # Introduction
 
-We worked with dogs in plain Java. This project returns dog data using Rest APIs with appropriate exception handling and make use of Server Side Rendering.
+We worked with dogs in plain Java. This project returns dog data using Rest APIs with appropriate exception handling and make use of a Java Front End.
 
 # Instructions
 
@@ -22,6 +22,6 @@ Add appropriate exception handling routines. Required exceptions to handle are w
   * the wrong data type is used for a path variable
   * a non-handled endpoint is accessed (a URL not found exception)
 
- Add server side rendering using Thymeleaf to 
+ Add a front end client using Thymeleaf to 
   * display all dogs ordered by breed
   * display all dogs suitable for apartments ordered by breed
