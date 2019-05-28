@@ -1,4 +1,4 @@
-package com.lambdaschool.projectrestdogs;
+package com.lambdaschool.dogsinitial;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

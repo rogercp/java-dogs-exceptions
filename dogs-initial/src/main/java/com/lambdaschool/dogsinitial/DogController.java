@@ -1,4 +1,4 @@
-package com.lambdaschool.projectrestdogs;
+package com.lambdaschool.dogsinitial;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
