@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 public class Dog
 {
-
+    private static final Logger logger= LoggerFactory.getLogger(Dog.class);
 
     private static final AtomicLong counter = new AtomicLong();
     private long id;
@@ -21,6 +21,9 @@ public class Dog
         this.breed = breed;
         this.weight = weight;
         this.apartmentSuitable = apartmentSuitable;
+
+        logger.info("We created a Dog");
+        logger.debug("Yes we created a Dog id "+this.id);
 
     }
 
