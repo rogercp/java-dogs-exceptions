@@ -46,7 +46,7 @@
     </appender>
 
 
-    <root level="OFF">
+    <root level="INFO">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE"/>
     </root>
@@ -71,7 +71,7 @@
     </logger>
 
     ///own logger for our project
-    <logger name="com.lambdaschool.dogsinitial.DogList" level="INFO">
+    <logger name="com.lambdaschool.dogsinitial.DogList" level="OFF">
         <appender-ref ref="STDOUT"/>
     </logger>
 
