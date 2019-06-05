@@ -1,9 +1,12 @@
 package com.lambdaschool.dogsinitial.model;
 
+import org.slf4j.Logger;
+
 import java.util.concurrent.atomic.AtomicLong;
 
 public class Dog
 {
+    private static final Logger
     private static final AtomicLong counter = new AtomicLong();
     private long id;
     private String breed;
