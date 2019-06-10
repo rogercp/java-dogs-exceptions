@@ -3,6 +3,11 @@ package com.lambdaschool.dogsinitial.controller;
 import com.lambdaschool.dogsinitial.exception.ResourceNotFoundException;
 import com.lambdaschool.dogsinitial.model.Dog;
 import com.lambdaschool.dogsinitial.DogsinitialApplication;
+import com.lambdaschool.dogsinitial.model.MessageDetail;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +22,10 @@ import java.util.ArrayList;
 @RequestMapping("/dogs")
 public class DogController
 {
+    private static final Logger logger= LoggerFactory.getLogger(DogController.class);
+
+//    @Autowired
+//   RabbitTemplate rt;
 
 
     // localhost:2020/dogs/dogs
@@ -24,6 +33,9 @@ public class DogController
                 produces = {"application/json"})
     public ResponseEntity<?> getAllDogs()
     {
+        logger.info("/dogs/dogs accessed");
+//         MessageDetail message = new MessageDetail("/dogs/dogs accessed", 7, false);
+//        rt.convertAndSend(DogsinitialApplication.QUEUE_NAME_HIGH,message);
         return new ResponseEntity<>(DogsinitialApplication.ourDogList.dogList, HttpStatus.OK);
     }
 
@@ -34,6 +46,9 @@ public class DogController
             produces = {"application/json"})
     public ResponseEntity<?> getDogDetail(@PathVariable long id) throws ResourceNotFoundException
     {
+        logger.info("/dogs "+id+ " accessed");
+//        MessageDetail message = new MessageDetail("/dogs \" +id+\" accessed ", 1, true);
+//        rt.convertAndSend(DogsinitialApplication.QUEUE_NAME_HIGH, message);
         Dog rtnDog;
         if(DogsinitialApplication.ourDogList.findDog(d -> (d.getId() == id))==null)
         {
@@ -53,6 +68,9 @@ public class DogController
             produces = {"application/json"})
     public ResponseEntity<?> getDogBreeds (@PathVariable String breed)
     {
+        logger.info("/dogs/breeds "+breed+ " accessed");
+//        MessageDetail message = new MessageDetail("/dogs/breeds \" +breed+\" accessed ", 4, true);
+//        rt.convertAndSend(DogsinitialApplication.QUEUE_NAME_HIGH, message);
         ArrayList<Dog> rtnDogs = DogsinitialApplication.ourDogList.
                 findDogs(d -> d.getBreed().toUpperCase().equals(breed.toUpperCase()));
         if(rtnDogs.size()==0)
